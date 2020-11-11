@@ -1,0 +1,10 @@
+<div class="card" data-controller="card" data-card-openned="false" data-target="game.card card.element" data-game-index="<%= index %>"
+  data-action="click->game#showCard click->card#flip">
+  <div class="card__inner"> <!-- Child element that flips -->
+    <div class="card__front">
+        <%= image_tag 'back.png', class: "image" %>
+    </div>
+    <div class="card__back">
+    </div>
+   </div>
+</div>

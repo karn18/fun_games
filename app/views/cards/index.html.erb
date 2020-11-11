@@ -1,0 +1,5 @@
+<main class="panel" data-controller="game" data-game-cards="<%= @cards %>">
+  <% @cards.times.each do |i| %>
+    <%= render 'cards/card', index: i %>
+  <% end %>
+</main>

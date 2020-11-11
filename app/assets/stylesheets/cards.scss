@@ -1,0 +1,79 @@
+// Place all the styles related to the Cards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+// Place all the styles related to the Game controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.panel {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  margin: 20px;
+
+  &__front, &__back {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    box-sizing: border-box;
+    transition-delay: 0.15s;
+    transition: 0;
+  }
+  
+  &__front {
+    transform: rotateY(0deg);
+  }
+  
+  &__back {
+    transform: rotateY(180deg);
+    opacity: 0;
+    backface-visibility: visible;
+    background: black;
+    color: white;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--flip {
+    transform: rotateY(180deg);
+    .card__front {
+      opacity: 0;
+    }
+    .card__back {
+      opacity: 1;
+    }
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: slide-in-right 1.25s;
+  animation: slide-in-right 1.25s cubic-bezier(0.625, 0.075, 0.110, 1.165);
+  animation-timing-function: cubic-bezier(0.625, 0.075, 0.110, 1.165);
+  font-size: 35px;
+  font-weight: 600;
+  margin: 0;
+}
